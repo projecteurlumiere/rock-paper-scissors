@@ -18,7 +18,7 @@ function game() {
 
             function getComputerChoice() {
 
-            var randomNumber = Math.floor(Math.random() * 3) + 1;
+            let randomNumber = Math.floor(Math.random() * 3) + 1;
             if (randomNumber == 1) {
                 return "Rock";
             }
@@ -31,7 +31,7 @@ function game() {
             }
 
             function getPlayerChoice() {
-                var playerSelection = prompt("Go ahead!\nRock, Paper, or Scissors?")
+                let playerSelection = prompt("Go ahead!\nRock, Paper, or Scissors?")
                 if (playerSelection != null) {
                     playerSelection = playerSelection.toLowerCase();
                 }
@@ -50,8 +50,8 @@ function game() {
                 }
             }
 
-            var computerChoice = getComputerChoice();
-            var playerChoice = getPlayerChoice();
+            let computerChoice = getComputerChoice();
+            let playerChoice = getPlayerChoice();
 
             function getGameResult() {
                 if (computerChoice == playerChoice) {
@@ -87,7 +87,7 @@ function game() {
                 }
             }
 
-            var gameResult = getGameResult();
+            let gameResult = getGameResult();
 
             if (gameResult == 1) {
                 alert("It's a tie!");

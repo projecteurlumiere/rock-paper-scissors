@@ -127,7 +127,7 @@ function game() {
     }
 
     for (set = 1; set < Infinity; set++){
-        let rematch = prompt("Your overall score: " + totalPlayerScore + "\nComputer overall score: " + totalComputerScore + "\nOne more? \nType 'Yes'");
+        let rematch = prompt("Rounds played: "+ set + "\nYour overall score: " + totalPlayerScore + "\nComputer overall score: " + totalComputerScore + "\nOne more? \nType 'Yes'");
 
         if (rematch != null) {
             rematch = rematch.toLowerCase();

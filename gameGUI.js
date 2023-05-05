@@ -9,11 +9,19 @@ const scoreText = document.getElementsByClassName("score")[0];
 getScoreText();
 
 function getScoreText(){
-    scoreText.textContent = `Your score is ${playerScore}; Computer's score is ${computerScore}`;
+    scoreText.textContent = `Your score is ${playerScore} and Computer's score is ${computerScore}`;
 }
 
 
 descriptionText.textContent = "Choose your fighter!";
+
+let resetScore = document.querySelector(".resetScore");
+resetScore.addEventListener('click', () => {
+  playerScore = 0;
+  computerScore = 0;
+  getScoreText();
+});
+
 
 let buttonRock = document.querySelector('.buttonRock');
 buttonRock.addEventListener('click', () => {

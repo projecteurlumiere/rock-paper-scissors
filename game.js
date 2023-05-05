@@ -138,6 +138,7 @@ function game() {
         }
         else {
             alert ("Good luck, challenger!");
+            window.location.href = "index.html";
             break;
         }
     }

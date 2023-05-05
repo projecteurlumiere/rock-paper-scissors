@@ -1,5 +1,7 @@
 alert("Welcome challenger! \nYou are about to play a (kind of) best of 5 game in Rock Paper Scissors against the mighty random computer \nThe rules are: \nWin awards 1 point, and game ends when you or your adversary achieves 3 points in total \nTies do not give any points \nThere can be 10 rounds in total \nGood luck challenger");
 
+game();
+
 function game() {
 
     let totalPlayerScore = 0;

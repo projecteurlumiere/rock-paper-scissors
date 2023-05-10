@@ -9,7 +9,7 @@ const scoreText = document.getElementsByClassName("score")[0];
 getScoreText();
 
 function getScoreText(){
-    scoreText.textContent = `Your score is ${playerScore} and Computer's score is ${computerScore}`;
+    scoreText.textContent = `${computerScore}:${playerScore}`;
 }
 
 
@@ -17,32 +17,42 @@ descriptionText.textContent = "Choose your fighter!";
 
 let resetScore = document.querySelector(".resetScore");
 resetScore.addEventListener('click', () => {
-  playerScore = 0;
-  computerScore = 0;
-  getScoreText();
+  rollPics();
+  setTimeout(function(){
+    playerScore = 0;
+    computerScore = 0;
+    getScoreText();
+    imgComp.innerHTML = "<img src=images/cube.png>";
+    imgPlayer.innerHTML = `<img src="images/question.png" style="-webkit-transform: scaleX(1);
+  transform: scaleX(1);">`;
+    descriptionText.textContent = "Choose your fighter!";
+  }, 625);
 });
 
 
 let buttonRock = document.querySelector('.buttonRock');
 buttonRock.addEventListener('click', () => {
   playerChoice = "rock";
-  playRound();
-  getScoreText();
+  rollPics();
+  setTimeout(playRound, 625);
+  setTimeout(getScoreText, 625);
 });
 
 
 let buttonPaper = document.querySelector('.buttonPaper');
 buttonPaper.addEventListener('click', () => {
   playerChoice = "paper";
-  playRound();
-  getScoreText();
+  rollPics();
+  setTimeout(playRound, 625);
+  setTimeout(getScoreText, 625);
 });
 
 let buttonScissors = document.querySelector('.buttonScissors');
 buttonScissors.addEventListener('click', () => {
   playerChoice = "scissors";
-  playRound();
-  getScoreText();
+  rollPics();
+  setTimeout(playRound, 625);
+  setTimeout(getScoreText, 625);
 });
 
 function getComputerChoice() {
@@ -51,17 +61,19 @@ function getComputerChoice() {
     if (randomNumber == 1) {
         return "rock";
     }
-        else if (randomNumber == 2) {
-            return "paper";
-        }
-        else {
-            return "scissors";
-        }
+    else if (randomNumber == 2) {
+        return "paper";
     }
+    else {
+        return "scissors";
+    }
+}
 
 function getGameResult(){
     playerChoice.toLowerCase();
     computerChoice.toLowerCase();
+    imgComp.innerHTML = `<img src=images/${computerChoice}.png>`;
+    imgPlayer.innerHTML = `<img src=images/${playerChoice}.png>`;
     if (playerChoice == computerChoice) {
         descriptionText.textContent = "Computer has chosen the same";
         return 1;
@@ -109,3 +121,41 @@ function playRound() {
         return computerScore++;
     }
 }
+
+
+let imgComp = document.querySelector(".imgComp");
+let imgPlayer = document.querySelector(".imgPlayer");
+
+function changeRock(){
+    imgComp.innerHTML = "<img src=images/rock.png>"
+}
+
+function changePaper(){
+    imgComp.innerHTML = "<img src=images/paper.png>"
+}
+
+function changeScissors(){
+    imgComp.innerHTML = "<img src=images/scissors.png>"
+}
+
+function getRandomPick(div){
+    let randomNumber = Math.floor(Math.random() * 3) + 1;
+    if (randomNumber == 1) {
+        div.innerHTML = "<img src=images/rock.png>";
+    }
+    else if (randomNumber == 2) {
+        div.innerHTML = "<img src=images/paper.png>";
+    }
+    else {
+        div.innerHTML = "<img src=images/scissors.png>";
+    }
+}
+
+
+function rollPics(){
+    for (i=0; i<=25; i++) {
+        setTimeout(function() {getRandomPick(imgComp)}, 25 * i);
+        setTimeout(function() {getRandomPick(imgPlayer)}, 25 * i);
+    }
+}
+

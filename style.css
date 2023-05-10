@@ -8,6 +8,7 @@ body {
 
 h1 {
     text-align: center;
+    height: 5vh;
 }
 
 main {
@@ -22,12 +23,19 @@ main {
     align-items: center;
     min-width: 442px;
     width: 80vw;
+    border: solid 1px red;
+    background-color: aliceblue;
 }
 
 .top {
     display: flex;
     justify-content: space-between;
+    height: 60vh;
+    min-height: calc(300px + 5vh);
+    border-right: solid 1px rebeccapurple;
+    border-left: solid 1px rebeccapurple;
 }
+
 
 .left,
 .right {
@@ -39,20 +47,30 @@ main {
     min-width: 42px;
 }
 
+.left,
+.right,
+.center {
+    max-height: 60vw;
+    min-height: calc(300px + 5vh);
+    background-color: antiquewhite;
+}
 
 
 .computerName,
 .playerName,
 .score {
     height: 5vh;
+    margin: 0 1vw;
     font-size: 16pt;
-    margin: 0 5vw;
+    padding-top: 2vh;
 }
 
 .score {
     color: brown;
     font-size: 24pt;
     font-weight: 900;
+    margin: 0 5vw;
+    border: none;
 }
 
 .top > div {
@@ -64,6 +82,7 @@ img {
     min-width: 145px;
     margin: 2vh 0;
     height: auto;
+    max-height: 45vh;
 }
 
 .rightImg,
@@ -72,6 +91,7 @@ img {
     justify-content: center;
     align-items: center;
     height: 100%;
+    min-height: 300px;
 }
 
 .imgPlayer > img {
@@ -92,10 +112,14 @@ img {
 
 .bottom {
     display: flex;
-    margin-top: 5vh;
+    padding: 5vh 0 2.5vh 0;
     flex-direction: column;
     align-items: center;
     gap: 1vh;
+    width: 60vw;
+    background-color: beige;
+    border-right: solid 1px rebeccapurple;
+    border-left: solid 1px rebeccapurple;
 }
 
 footer {
@@ -109,6 +133,6 @@ footer > * {
     margin: 0;
 }
 
-@media (max-width: 442px) {
+@media (max-width: 450px) {
 
 }

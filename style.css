@@ -4,11 +4,11 @@
 
 body {
     margin: 0;
+
 }
 
 h1 {
     text-align: center;
-    height: 5vh;
 }
 
 main {
@@ -31,6 +31,7 @@ main {
     display: flex;
     justify-content: space-between;
     height: 60vh;
+    width: 60vw;
     min-height: calc(300px + 5vh);
     border-right: solid 1px rebeccapurple;
     border-left: solid 1px rebeccapurple;
@@ -40,6 +41,7 @@ main {
 .left,
 .right {
     min-width: 200px;
+    padding: 0 1vw;
 }
 
 .center {
@@ -50,7 +52,6 @@ main {
 .left,
 .right,
 .center {
-    max-height: 60vw;
     min-height: calc(300px + 5vh);
     background-color: antiquewhite;
 }
@@ -59,7 +60,6 @@ main {
 .computerName,
 .playerName,
 .score {
-    height: 5vh;
     margin: 0 1vw;
     font-size: 16pt;
     padding-top: 2vh;
@@ -78,11 +78,9 @@ main {
 }
 
 img {
-    max-width: 20vw;
-    min-width: 145px;
+    max-width: 100%;
+    max-height: 50vh;
     margin: 2vh 0;
-    height: auto;
-    max-height: 45vh;
 }
 
 .rightImg,
@@ -90,8 +88,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    min-height: 300px;
+    height: 55vh;
 }
 
 .imgPlayer > img {
@@ -127,12 +124,100 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 7vh;
+    background-color: blanchedalmond;
+    position: fixed;
+    bottom: 0;
+    padding: 1vh 0;
+    width: 100%;
 }
 
 footer > * {
     margin: 0;
+    font-size: 2vh;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 815px), (max-height: 725px) {
+    h1 {
+        min-height: 3vh;
+        font-size: 4.25vh;
+    }
+     
+    .gameContainer {
+        width: 95vw;
+    }
+    
+    .top,
+    .bottom {
+        width: 90vw;
+    }
 
+    .top {
+        min-height: 50vh;
+        justify-content: center;
+    }
+
+    .right,
+    .left,
+    .center {
+        min-height: 75vh;
+    }
+
+    .top > div {
+        width: 47.5%;
+    }
+
+    .center {
+        width: 5% !important;
+    }
+
+}
+
+@media (max-width: 515px), (max-height: 575px) {
+    .top,
+    .bottom {
+        width: 95vw;
+    }
+
+
+    .right,
+    .left {
+        min-width: 0;
+    }
+
+    img {
+        min-height: 0 !important;
+    }
+
+}
+
+@media (max-height: 560px) {
+    footer > a {
+        font-size: 0;
+    }
+    
+    footer > p {
+        font-size: 2.5vh;
+    }
+
+    footer {
+        max-height: 3vh;
+        padding: 0.5vh;
+    }
+
+    .computerName,
+    .playerName {
+        font-size: 12pt;
+    }
+
+}
+
+@media (max-height: 400px) {
+    .description {
+        font-size: 0;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
 }

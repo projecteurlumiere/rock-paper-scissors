@@ -133,7 +133,7 @@ img {
 .description {
     padding: 2vh 2vw 0 2vw;
     text-align: center;
-    height: 54px;
+    height: 65px;
 }
 
 .buttonsPlay {
@@ -241,21 +241,24 @@ footer > * {
     }
     
     img {
-        max-height: 35vh;
+        max-height: 30vh;
     }
 
     .rightImg,
     .leftImg {
-        height: 40vh;
+        height: 35vh;
     }
     
     .right,
+    .center,
     .left {
-        height: 45vh;
+        height: 40vh;
+        min-height: 40vh;
     }
 
     .top {
-        height: 50vh;
+        height: 40vh;
+        min-height: 40vh;
     }
 
     .computerName,
@@ -266,7 +269,7 @@ footer > * {
 }
 
 @media (max-height: 450px) {
-    
+
     .description {
         font-size: 0;
         height: 0;
@@ -310,7 +313,7 @@ footer > * {
 @media (max-width: 340px) {
     .computerName,
     .playerName {
-        font-size: 4vh;
+        font-size: 10pt;
         white-space: nowrap;
     }
 }

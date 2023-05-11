@@ -251,3 +251,19 @@ footer > * {
         white-space: nowrap;
     }
 }
+
+@media screen and (orientation:landscape) {
+    img {
+        max-height: 25vh;
+    }
+
+    .top {
+        min-height: 45vh;
+    }
+
+    .right,
+    .left {
+        max-height: 30vh;
+    }
+
+}

@@ -24,7 +24,7 @@ resetScore.addEventListener('click', () => {
     getScoreText();
     imgComp.innerHTML = "<img src=images/cube.png>";
     imgPlayer.innerHTML = `<img src="images/question.png" style="-webkit-transform: scaleX(1);
-  transform: scaleX(1); min-height: 250px;">`;
+  transform: scaleX(1);">`;
     descriptionText.textContent = "Choose your fighter!";
   }, 625);
 });

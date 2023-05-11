@@ -240,11 +240,33 @@ footer > * {
         margin: 10px 0;
     }
     
+    img {
+        max-height: 35vh;
+    }
+
+    .rightImg,
+    .leftImg {
+        height: 40vh;
+    }
+    
+    .right,
+    .left {
+        height: 45vh;
+    }
+
+    .top {
+        height: 50vh;
+    }
+
     .computerName,
     .playerName {
         font-size: 12pt;
     }
 
+}
+
+@media (max-height: 450px) {
+    
     .description {
         font-size: 0;
         height: 0;

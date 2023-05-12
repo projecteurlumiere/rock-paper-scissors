@@ -18,6 +18,7 @@ descriptionText.textContent = "Choose your fighter!";
 let resetScore = document.querySelector(".resetScore");
 resetScore.addEventListener('click', () => {
   rollPics();
+  buttonGray();
   setTimeout(function(){
     playerScore = 0;
     computerScore = 0;
@@ -29,11 +30,18 @@ resetScore.addEventListener('click', () => {
   }, 625);
 });
 
+let buttons = document.querySelectorAll("button");
+function buttonGray(){
+    buttons.forEach(button => button.disabled = true);
+    setTimeout(() => {buttons.forEach(button => button.disabled = false)}, 625);
+}
+
 
 let buttonRock = document.querySelector('.buttonRock');
 buttonRock.addEventListener('click', () => {
   playerChoice = "rock";
   rollPics();
+  buttonGray();
   setTimeout(playRound, 625);
   setTimeout(getScoreText, 625);
 });
@@ -43,6 +51,7 @@ let buttonPaper = document.querySelector('.buttonPaper');
 buttonPaper.addEventListener('click', () => {
   playerChoice = "paper";
   rollPics();
+  buttonGray();
   setTimeout(playRound, 625);
   setTimeout(getScoreText, 625);
 });
@@ -51,6 +60,7 @@ let buttonScissors = document.querySelector('.buttonScissors');
 buttonScissors.addEventListener('click', () => {
   playerChoice = "scissors";
   rollPics();
+  buttonGray();
   setTimeout(playRound, 625);
   setTimeout(getScoreText, 625);
 });

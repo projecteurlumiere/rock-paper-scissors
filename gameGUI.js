@@ -23,9 +23,8 @@ resetScore.addEventListener('click', () => {
     playerScore = 0;
     computerScore = 0;
     getScoreText();
-    imgComp.innerHTML = "<img src=images/cube.png>";
-    imgPlayer.innerHTML = `<img src="images/question.png" style="-webkit-transform: scaleX(1);
-  transform: scaleX(1);">`;
+    imgComp.innerHTML = `<img src="images/cube.png" alt="dice">`;
+    imgPlayer.innerHTML = `<img src="images/question.png" alt="question mark" style="-webkit-transform: scaleX(1); transform: scaleX(1);">`;
     descriptionText.textContent = "Choose your fighter!";
   }, 625);
 });
@@ -82,8 +81,8 @@ function getComputerChoice() {
 function getGameResult(){
     playerChoice.toLowerCase();
     computerChoice.toLowerCase();
-    imgComp.innerHTML = `<img src=images/${computerChoice}.png>`;
-    imgPlayer.innerHTML = `<img src=images/${playerChoice}.png>`;
+    imgComp.innerHTML = `<img src="images/${computerChoice}.png" alt="${computerChoice}">`;
+    imgPlayer.innerHTML = `<img src="images/${playerChoice}.png" alt="${playerChoice}">`;
     if (playerChoice == computerChoice) {
         descriptionText.textContent = "Computer has chosen the same";
         return 1;
@@ -137,27 +136,27 @@ let imgComp = document.querySelector(".imgComp");
 let imgPlayer = document.querySelector(".imgPlayer");
 
 function changeRock(){
-    imgComp.innerHTML = "<img src=images/rock.png>"
+    imgComp.innerHTML = `<img src="images/rock.png" alt="rock">`
 }
 
 function changePaper(){
-    imgComp.innerHTML = "<img src=images/paper.png>"
+    imgComp.innerHTML = `<img src="images/paper.png" alt="paper">`
 }
 
 function changeScissors(){
-    imgComp.innerHTML = "<img src=images/scissors.png>"
+    imgComp.innerHTML = `<img src="images/scissors.png" alt="scissors">`
 }
 
 function getRandomPick(div){
     let randomNumber = Math.floor(Math.random() * 3) + 1;
     if (randomNumber == 1) {
-        div.innerHTML = "<img src=images/rock.png>";
+        div.innerHTML = `<img src="images/rock.png" alt="rock">`;
     }
     else if (randomNumber == 2) {
-        div.innerHTML = "<img src=images/paper.png>";
+        div.innerHTML = `<img src="images/paper.png" alt="paper">`;
     }
     else {
-        div.innerHTML = "<img src=images/scissors.png>";
+        div.innerHTML = `<img src="images/scissors.png" alt="scissors">`;
     }
 }
 
